@@ -30,15 +30,15 @@
          * Добавляем элемент меню
          * @param {Object} item
          */
-        addItem(item) {            
-            let el = document.createElement('div')
+        addItem(item) {
+            let el = document.createElement('div');
             el.innerHTML = this.getItemHtml(item, this.data.items.length);
             el = el.firstElementChild;
 
             this.list.append(el);
             el.addEventListener('animationend', () => el.classList.remove('bounce-in-left'));
             el.classList.add('bounce-in-left');
-            
+
             this.data.items.push(item);
         }
 
@@ -59,7 +59,7 @@
          * @param {number} index
          * @return {string}
          */
-        getItemHtml (item, index) {
+        getItemHtml(item, index) {
             return `
             <li class="pure-menu-item" data-index="${index}">
                 <a 
@@ -83,10 +83,10 @@
              */
             let generateItems = (itmes) => {
                 return itmes.map(this.getItemHtml.bind(this)).join('');
-            }
+            };
 
             this.el.innerHTML = tmpl(this.data);
-            
+
             `
             <div class="menu pure-menu custom-restricted-width">
                 <span class="menu__title pure-menu-heading">
