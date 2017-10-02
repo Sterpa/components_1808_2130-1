@@ -17,27 +17,27 @@
             let menu = new Menu({
                 el: document.querySelector('.js-menu'),
                 data: {
-                    title: 'Список мероприятий с датами',
+                    title: 'Список дел на сегодня',
                     items: [
                         {
                             href: 'https://vk.com',
-                            anchor: 'vk.com'
+                            anchor: '6 утра - Подъем'
                         },
                         {
                             href: 'https://ok.ru',
-                            anchor: 'ok.ru'
+                            anchor: '7 утра - Разгон облаков...'
                         },
                         {
                             href: 'https://yahoo.com',
-                            anchor: 'yahoo.com'
+                            anchor: '&nbsp;&nbsp;&nbsp;&nbsp;Установление хорошей погоды'
                         },
                         {
                             href: 'https://yandex.ru',
-                            anchor: 'yandex.ru'
+                            anchor: 'с 8 до 10 - Подвиг'
                         },
                         {
                             href: 'https://yandex.ru',
-                            anchor: 'yandex.ru'
+                            anchor: 'в 16:00 - война с Англией'
                         }
                     ]
                 },

@@ -4,15 +4,14 @@ body, html {
 
 body {
     overflow: hidden;
-    background: radial-gradient(black 15%, transparent 16%) 0 0, radial-gradient(black 15%, transparent 16%) 8px 8px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px, radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
-    background-color: #282828;
-
-    background-size: 16px 16px;
+    background-image: url(https://cs5.pikabu.ru/images/big_size_comm/2014-07_3/14050735515003.jpg);
+    background-color: black;
+    background-size: 300px 300px;
 }
 
 .app {
-    max-width: 800px;
-    transform: translateY(-50%) translateX(-80%);
+    max-width: 600px;
+    transform: translateY(-50%) translateX(-50%);
     position: absolute;
     top: 50%;
     left: 50%;
