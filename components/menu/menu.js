@@ -67,7 +67,7 @@
                 class="pure-menu-link"
                 href="${item.href}"
                 data-action="pick">
-                    ${item.anchor}
+                    ${item.anchor} ${item.href}
                 </a>
                 <i class="close" data-action="remove"></i>
             </li>`;
