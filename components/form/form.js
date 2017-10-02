@@ -29,7 +29,7 @@
                         type="url"
                         name="href"
                         required="required"
-                        placeholder="url"/>
+                        placeholder="дело"/>
 
                     <input class="form__input"
                         type="date"
@@ -58,7 +58,7 @@
         _myTrigger(event) {
             event.preventDefault(); // Отмена действия браeзера 'submit' по-умолчанию для формы
             let eventData = {
-                url: this.el.querySelector('input[name="href"]').value,
+                href: this.el.querySelector('input[name="href"]').value,
                 anchor: this.el.querySelector('input[name="anchor"]').value
             };
             this.trigger('toChat', eventData);

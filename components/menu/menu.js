@@ -60,6 +60,7 @@
          * @return {string}
          */
         getItemHtml(item, index) {
+            console.log(item); // Для теста item
             return `
             <li class="pure-menu-item" data-index="${index}">
                 <a 
