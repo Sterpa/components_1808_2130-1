@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    //const tmpl = window.menuTmpl;
+    const tmpl = window.menuTmpl;
 
     /**
      * @typedef {Item} Тип элемента меню
@@ -85,9 +85,10 @@
                 return itmes.map(this.getItemHtml.bind(this)).join('');
             };
 
-            // this.el.innerHTML = tmpl(this.data);
+            this.el.innerHTML = tmpl(this.data);
 
-            this.el.innerHTML = `<div class="menu pure-menu custom-restricted-width">
+            `
+            <div class="menu pure-menu custom-restricted-width">
                 <span class="menu__title pure-menu-heading">
                 ${this.data.title}
                 </span>

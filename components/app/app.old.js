@@ -16,8 +16,12 @@
         constructor({el}) {
             let menu = new Menu({
                 el: document.querySelector('.js-menu'),
+                onPick(item) {
+                    console.log(item);
+                },
+
                 data: {
-                    title: 'Список мероприятий с датами',
+                    title: 'SINGLE PAGE APPLICATION',
                     items: [
                         {
                             href: 'https://vk.com',
@@ -40,9 +44,6 @@
                             anchor: 'yandex.ru'
                         }
                     ]
-                },
-                onPick(item) {
-                    console.log(item);
                 }
             });
 
@@ -51,7 +52,7 @@
                 data: {}
             });
 
-            form.el.addEventListener('toChat', (event) => {
+            form.addEventListener('save', (event) => {
                 menu.addItem(event.detail);
             });
         }

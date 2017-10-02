@@ -14,7 +14,7 @@
             this.data = data;
             this.onSubmit = onSubmit;
 
-            this._myInitEvents();
+            this._initEvents();
             this.render();
         }
 
@@ -26,17 +26,14 @@
             <form class="form pure-form">
                 <fieldset>
                     <input class="form__input"
-                        type="url"
-                        name="href"
+                        type="url" name="href"
                         required="required"
                         placeholder="url"/>
 
                     <input class="form__input"
-                        type="date"
-                        name="anchor"
+                        type="text" name="anchor"
                         required="required"
                         placeholder="anchor"/>
-
                     <button class="form__btn pure-button" type="submit">
                         Save
                     </button>
@@ -44,25 +41,48 @@
             </form>`;
         }
 
+
         /**
-        * Развешиваем события 2
+         * Получение элемента формы по имени
+         * @param  {string} name
+         * @return {HTMLElement}
+         */
+        getField(name) {
+            return this.el.querySelector(`[name="${name}"]`);
+        }
+
+
+        /**
+        * Развешиваем события
         */
-        _myInitEvents() {
-            this.el.addEventListener('submit', this._myTrigger.bind(this));
+        _initEvents() {
+            this.el.addEventListener('submit', this._onSubmit.bind(this));
+        }
+
+
+        /**
+        * Отправка данных формы
+        * @param {Event} event
+        * @private
+        */
+        _onSubmit(event) {
+            event.preventDefault();
+
+            // this.onSubmit(this);
+            this.trigger('save', {
+                url: this.el.querySelector('input[name="href"]').value,
+                anchor: this.el.querySelector('input[name="anchor"]').value
+            });
+            event.target.reset();
         }
 
         /**
-        * Триггер 2
-        * @param {Event} event
-        */
-        _myTrigger(event) {
-            event.preventDefault(); // Отмена действия браeзера 'submit' по-умолчанию для формы
-            let eventData = {
-                url: this.el.querySelector('input[name="href"]').value,
-                anchor: this.el.querySelector('input[name="anchor"]').value
-            };
-            this.trigger('toChat', eventData);
-            event.target.reset();
+         * Подписка на события
+         * @param {string} eventName
+         * @param {Function} callback
+         */
+        addEventListener(eventName, callback) {
+            this.el.addEventListener(eventName, callback);
         }
 
         /**
@@ -71,11 +91,11 @@
          * @param {*} eventData
          */
         trigger(eventName, eventData) {
-            let myEvent = new CustomEvent(eventName, {
+            let event = new CustomEvent(eventName, {
                 detail: eventData
             });
 
-            this.el.dispatchEvent(myEvent);
+            this.el.dispatchEvent(event);
         }
     }
 
