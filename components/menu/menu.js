@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    //const tmpl = window.menuTmpl;
+    // const tmpl = window.menuTmpl;
 
     /**
      * @typedef {Item} Тип элемента меню
