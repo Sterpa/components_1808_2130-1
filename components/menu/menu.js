@@ -44,12 +44,10 @@
 
         /**
          * Удаляем пункт меню из данных
-         * @param  {Object} removedItem
+         * @param {Integer} itemIndex
          */
-        removeItem(removedItem) {
-            this.data.items = this.data.items.filter((item, index) => {
-                return index !== removedItem.index;
-            });
+        removeItem(itemIndex) {
+            this.data.items.splice(itemIndex, 1);
             this.render();
         }
 
@@ -67,9 +65,8 @@
                 class="pure-menu-link"
                 href="${item.href}"
                 data-action="pick">
-                    ${item.anchor} ${item.href}
-                </a>
-                <i class="close" data-action="remove"></i>
+                    ${item.anchor}
+                </a><button class="close remove-button" data-action="remove">[X]</button>
             </li>`;
         }
 
@@ -108,11 +105,8 @@
         * @private
         */
         _onRemoveClick(item) {
-            let el = /** @type {Element} */ item.parentNode;
-
             let index = parseInt(item.parentNode.dataset.index, 10);
-            el.addEventListener('animationend', this.removeItem.bind(this, {index}));
-            el.classList.add('bounce-out-right');
+            this.removeItem(index);
         }
 
         /**
@@ -136,16 +130,19 @@
         * @private
         */
         _onClick(event) {
+            // if (event.target.dataset.action != 'pick') event.preventDefault();
             event.preventDefault();
             let item = event.target;
 
             switch (item.dataset.action) {
             case 'remove':
+            this._onPickClick(item);
             this._onRemoveClick(item);
             break;
 
             case 'pick':
             this._onPickClick(item);
+            if (item.href) window.open(item.href);
             break;
             }
         }

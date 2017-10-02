@@ -1,0 +1,20 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background-image: url(https://cs5.pikabu.ru/images/big_size_comm/2014-07_3/14050735515003.jpg);
+    background-color: black;
+    background-size: 300px 300px;
+}
+
+.app {
+    max-width: 600px;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #fff;
+}
