@@ -55,6 +55,16 @@
             form.el.addEventListener('toChat', (event) => {
                 menu.addItem(event.detail);
             });
+
+            // Новое меню по шаблону
+            let tmpl = _.template(document.getElementById('list-template').innerHTML);
+            
+            // ..результат
+            let result = tmpl({count: 6});
+            let elm = document.createElement('div');
+            elm.innerHTML = result;
+            elm = elm.firstElementChild;
+            document.body.querySelector('.myApp').append(elm);
         }
     }
 

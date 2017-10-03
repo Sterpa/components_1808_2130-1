@@ -5,17 +5,27 @@
         <!--
         <meta charset="utf-8" />
         -->
+        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
         <link rel="stylesheet" href="components/app/app.css">
         <link rel="stylesheet" href="components/form/form.css">
         <link rel="stylesheet" href="components/menu/menu.css">
+        <!-- шаблон для списка от 1 до count -->
+        <script type="text/template" id="list-template">
+            <ul>
+            <% for (var i=1; i<=count; i++) { %>
+            <li><%=i%></li>
+            <% } %>
+            </ul>
+        </script>
     </head>
     <body>
-
+        <div class="myApp"></div>
         <div class="app js-app">
             <div class="js-menu"></div>
             <div class="js-form"></div>
         </div>
+
 
         <script src="components/form/form.js"></script>
         <script src="components/menu/menu.js"></script>
@@ -25,5 +35,21 @@
             "use strict";
             new window.App({el: document.querySelector('.js-app')});
         </script>
+
+        <script type="text/template" id="menu-title-template">
+            <div class="menu-title">
+            <span class="title"><%-title%></span>
+            </div>
+        </script>
+
+        <script type="text/template" id="menu-list-template">
+            <ul class"menu-list">
+            <% for (let i=0; i<=items.length; i++) { %>
+            <li class="menu-item" data-index=<%-i%>><%-items[i].anchor%></li>
+            <button class="menu-delete-button" data-index=<%-i%>>[X]</button>
+            <% }); %>
+            </ul>
+        </script>
+
     </body>
 </html>
