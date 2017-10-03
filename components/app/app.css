@@ -2,11 +2,10 @@ body {
     font: 100% arial;
 }
 
-.app {
-    max-width: 600px;
-    transform: translateY(-50%) translateX(-50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
+ .centerLayer {
+    width: 600px;
+ }
+
+ .js-app {
     background-color: #fff;
 }

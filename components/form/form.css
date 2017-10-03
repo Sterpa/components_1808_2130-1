@@ -1,10 +1,11 @@
-.form fieldset{
+.form__form fieldset{
+    text-align: left;
     border-width: 1px;
     border-color: black;
 }
 
 .form__input {
-    width: 200px;
+    width: 40%;
     height: 24px;
     font: caption;
     border-width: 1px;
@@ -12,8 +13,10 @@
 }
 
 .form__btn {
-    width: 60px;
-    height: 30px;
-    margin-top: 6px;
-    margin-left: 6px;
+    float: right;
+    width: 10%;
+    height: 24px;
+    border-width: 1px;
+    border-color: black;
+    margin-top: 3px;
 }
