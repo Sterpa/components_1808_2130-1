@@ -22,7 +22,7 @@
          */
         render() {
             this.el.innerHTML = `
-            <form class="form">
+            <form class="form__form">
                 <fieldset>
                     <input class="form__input"
                         type="url"

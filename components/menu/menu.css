@@ -1,8 +1,8 @@
-li {
+.menu__item {
   text-align: right;
 }
 
-a {
+.menu__link {
   float: left;
 }
 

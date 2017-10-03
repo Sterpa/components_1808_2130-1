@@ -29,7 +29,7 @@
                         },
                         {
                             href: 'https://yahoo.com',
-                            anchor: '&nbsp;&nbsp;&nbsp;&nbsp;Установление хорошей погоды'
+                            anchor: '30 мин - Установление хорошей погоды'
                         },
                         {
                             href: 'https://yandex.ru',
