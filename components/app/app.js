@@ -58,7 +58,7 @@
 
             // Новое меню по шаблону
             let tmpl = _.template(document.getElementById('list-template').innerHTML);
-            
+
             // ..результат
             let result = tmpl({count: 6});
             let elm = document.createElement('div');
