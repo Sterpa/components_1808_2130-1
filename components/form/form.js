@@ -9,7 +9,7 @@
          * @constructor
          * @param {Object} opts
          */
-        constructor({opts}) {
+        constructor(opts) {
             this.el = opts.el;
             this.data = opts.data;
 
@@ -22,7 +22,7 @@
          */
         render() {
             this.el.innerHTML = `
-            <form class="form pure-form">
+            <form class="form">
                 <fieldset>
                     <input class="form__input"
                         type="url"
@@ -36,7 +36,7 @@
                         required="required"
                         placeholder="anchor"/>
 
-                    <button class="form__btn pure-button" type="submit">
+                    <button class="form__btn" type="submit">
                         Save
                     </button>
                 </fieldset>

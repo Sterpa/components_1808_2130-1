@@ -1,9 +1,19 @@
+li {
+  text-align: right;
+}
+
+a {
+  float: left;
+}
+
 .remove-button {
-    font-size: 110%;
-    color: darkred;
-    width: 24px;
-    height: 24px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-  }
+  font-size: 110%;
+  color: darkred;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding-right: 25px;
+}
+

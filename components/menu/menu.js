@@ -58,13 +58,11 @@
          */
         getItemHtml(item, index) {
             return `
-            <li class="pure-menu-item" data-index="${index}">
-                <a 
-                class="pure-menu-link"
-                href="${item.href}"
-                data-action="pick">
+            <li class="menu__item" data-index="${index}">
+                <a class="menu__link" href="${item.href}" data-action="pick">
                     ${item.anchor}
-                </a><button class="close remove-button" data-action="remove">[X]</button>
+                </a>
+                <button class="close remove-button" data-action="remove">[X]</button>
             </li>`;
         }
 
@@ -83,12 +81,12 @@
 
             // this.el.innerHTML = tmpl(this.data);
 
-            this.el.innerHTML = `<div class="menu pure-menu custom-restricted-width">
-                <span class="menu__title pure-menu-heading">
-                ${this.data.title}
+            this.el.innerHTML = `<div class="menu">
+                <span class="menu__title">
+                    <h3>${this.data.title}</h3>
                 </span>
-                <ul class="menu__list pure-menu-list">
-                ${generateItems(this.data.items)}
+                <ul class="menu__list">
+                    ${generateItems(this.data.items)}
                 </ul>
             </div>
             `;

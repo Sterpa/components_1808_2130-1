@@ -1,0 +1,14 @@
+input {
+    width: 200px;
+    height: 24px;
+    font: caption;
+    margin: 1px;
+    padding: 1px;
+}
+
+.form__btn {
+    width: 60px;
+    height: 30px;
+    margin-top: 6px;
+    margin-left: 6px;
+}
