@@ -31,23 +31,22 @@
          * @param {Object} item
          */
         addItem(item) {
-            let el = document.createElement('div');
-            el.innerHTML = this.getItemHtml(item, this.data.items.length);
-            el = el.firstElementChild;
-
-            this.list.append(el);
-            el.addEventListener('animationend', () => el.classList.remove('bounce-in-left'));
-            el.classList.add('bounce-in-left');
+            // let el = document.createElement('div');
+            // el.innerHTML = this.getItemHtml(item, this.data.items.length);
+            // el = el.firstElementChild;
+            // this.list.append(el);
 
             this.data.items.push(item);
+            this.render();
         }
 
         /**
          * Удаляем пункт меню из данных
-         * @param {Integer} itemIndex
+         * @param {Object} item
          */
-        removeItem(itemIndex) {
-            this.data.items.splice(itemIndex, 1);
+        removeItem(item) {
+            let index = parseInt(item.parentNode.dataset.index, 10);
+            this.data.items.splice(index, 1);
             this.render();
         }
 
@@ -58,7 +57,6 @@
          * @return {string}
          */
         getItemHtml(item, index) {
-            console.log(item); // Для теста item
             return `
             <li class="pure-menu-item" data-index="${index}">
                 <a 
@@ -105,8 +103,7 @@
         * @private
         */
         _onRemoveClick(item) {
-            let index = parseInt(item.parentNode.dataset.index, 10);
-            this.removeItem(index);
+            this.removeItem(item);
         }
 
         /**

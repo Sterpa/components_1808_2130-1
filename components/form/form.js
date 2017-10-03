@@ -7,15 +7,14 @@
     class Form {
         /**
          * @constructor
-         * @param  {Object} opts
+         * @param {Object} opts
          */
-        constructor({el, data, onSubmit}) {
-            this.el = el;
-            this.data = data;
-            this.onSubmit = onSubmit;
+        constructor({opts}) {
+            this.el = opts.el;
+            this.data = opts.data;
 
-            this._myInitEvents();
             this.render();
+            this._myInitEvents();
         }
 
         /**

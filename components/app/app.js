@@ -51,6 +51,7 @@
                 data: {}
             });
 
+            // Обрабатываем всплывшее событие с form
             form.el.addEventListener('toChat', (event) => {
                 menu.addItem(event.detail);
             });
