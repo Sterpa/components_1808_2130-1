@@ -62,7 +62,7 @@
                 <a class="menu__link" href="${item.href}" data-action="pick">
                     ${item.anchor}
                 </a>
-                <button class="close remove-button" data-action="remove">[X]</button>
+                <button class="close menu__remove-button" data-action="remove">[X]</button>
             </li>`;
         }
 

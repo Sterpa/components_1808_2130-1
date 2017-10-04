@@ -24,20 +24,21 @@
             this.el.innerHTML = `
             <form class="form__form">
                 <fieldset>
-                    <input class="form__input"
+                <input class="form__input-date"
+                    type="date"
+                    name="anchor"
+                    required="required"
+                    placeholder="date"
+                    value="${this._getDateInFormat()}"/>
+
+                <input class="form__input-url"
                         type="url"
                         name="href"
                         required="required"
                         placeholder="дело"/>
 
-                    <input class="form__input"
-                        type="date"
-                        name="anchor"
-                        required="required"
-                        placeholder="anchor"/>
-
                     <button class="form__btn" type="submit">
-                        Save
+                        Send
                     </button>
                 </fieldset>
             </form>`;
@@ -75,6 +76,20 @@
             });
 
             this.el.dispatchEvent(myEvent);
+        }
+
+        /**
+         * Получение текущей даты в формате YYYY-MM-DD
+         * @return {string}
+         */
+        _getDateInFormat() {
+            let dateNow = new Date();
+            let yearNow = dateNow.getFullYear();
+            let monthNow = dateNow.getMonth();
+            if (monthNow < 10) monthNow = `0${monthNow}`;
+            let dayNow = dateNow.getDate();
+            if (dayNow < 10) dayNow = `0${dayNow}`;
+            return `${yearNow}-${monthNow}-${dayNow}`;
         }
     }
 

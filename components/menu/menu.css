@@ -1,3 +1,7 @@
+.menu__title {
+  text-align: center;
+}
+
 .menu__item {
   text-align: right;
 }
@@ -6,7 +10,7 @@
   float: left;
 }
 
-.remove-button {
+.menu__remove-button {
   font-size: 110%;
   color: darkred;
   width: 24px;

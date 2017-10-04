@@ -6,7 +6,9 @@
         <meta charset="utf-8" />
         -->
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+        <script src="https://pugjs.org/js/pug.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+        <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="components/app/app.css">
         <link rel="stylesheet" href="components/form/form.css">
         <link rel="stylesheet" href="components/menu/menu.css">
@@ -14,44 +16,55 @@
         <!-- шаблон для списка от 1 до count -->
         <script type="text/template" id="list-template">
             <ul>
-            <% for (var i=1; i<=count; i++) { %>
+            <% for (let i=1; i<=count; i++) { %>
             <li><%=i%></li>
             <% } %>
             </ul>
         </script>
     </head>
     <body>
-        <div align="center">
+        <div class="baseLayer">
             <div class="centerLayer">
                 <div class="js-app">
                     <div class="js-menu"></div>
                     <div class="js-form"></div>
                 </div>
+                <div class="js-app2">
+                    <div class="js-menu2"></div>
+                    <div class="js-form2"></div>
+                </div>                
             </div>
         </div>
 
         <script src="components/form/form.js"></script>
         <script src="components/menu/menu.js"></script>
         <script src="components/app/app.js"></script>
+        
 
         <script>
             "use strict";
             new window.App({el: document.querySelector('.js-app')});
         </script>
+        
+        <script src="http://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
+        <script>
+            // Новое меню по шаблону PUG
+            // Compile the source code
+            //var fs = require('fs');
+            const pug = require('pug');
+            function foo() {
+                let a = 1;
+            }
+            console.log(foo);
+            // Compile the source code
+            foo = pug.compileClient('p #{fam}s Pug source code!');
+            console.log(foo);
+            // Render a set of data
+            let resultPug = foo({
+                fam: 'Timothy'
+            });
 
-        <script type="text/template" id="menu-title-template">
-            <div class="menu-title">
-            <span class="title"><%-title%></span>
-            </div>
-        </script>
-
-        <script type="text/template" id="menu-list-template">
-            <ul class"menu-list">
-            <% for (let i=0; i<=items.length; i++) { %>
-            <li class="menu-item" data-index=<%-i%>><%-items[i].anchor%></li>
-            <button class="menu-delete-button" data-index=<%-i%>>[X]</button>
-            <% }); %>
-            </ul>
+            document.body.querySelector('.js-menu2').innerHTML = resultPug;
         </script>
 
     </body>

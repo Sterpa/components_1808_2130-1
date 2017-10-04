@@ -1,0 +1,12 @@
+body {
+    font: 100% arial;
+}
+
+ .baseLayer {
+    font: 100% arial;
+ }
+
+ .centerLayer {
+    width: 600px;
+    margin: auto;
+ }

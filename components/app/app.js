@@ -64,7 +64,8 @@
             let elm = document.createElement('div');
             elm.innerHTML = result;
             elm = elm.firstElementChild;
-            document.body.querySelector('.myApp').append(elm);
+            document.body.querySelector('.js-app2').append(elm);
+
         }
     }
 
