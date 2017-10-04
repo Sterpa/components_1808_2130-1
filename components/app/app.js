@@ -65,7 +65,6 @@
             elm.innerHTML = result;
             elm = elm.firstElementChild;
             document.body.querySelector('.js-app2').append(elm);
-
         }
     }
 
