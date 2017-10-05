@@ -14,30 +14,15 @@
          * @param {HTMLElement} param0.el
          */
         constructor({el}) {
-            let menu = new Menu({
+            this.menu = new Menu({
                 el: document.querySelector('.js-menu'),
                 data: {
-                    title: 'Список дел на сегодня',
+                    title: 'Список дел в этой вселенной',
                     items: [
                         {
-                            day: '',
+                            day: '1957-10-04',
                             anchor: '6 утра - Подъем',
                             href: 'https://vk.com'
-                        },
-                        {
-                            day: '',
-                            anchor: '7 утра - Разгон облаков... Установление хорошей погоды',
-                            href: 'https://ok.ru'
-                        },
-                        {
-                            day: '',
-                            anchor: 'с 8 до 10 - Подвиг',
-                            href: 'https://yahoo.com'
-                        },
-                        {
-                            day: '',
-                            anchor: 'в 16:00 - война с Англией',
-                            href: 'https://yandex.ru'
                         }
                     ]
                 },
@@ -53,18 +38,49 @@
 
             // Обрабатываем всплывшее событие с form
             form.el.addEventListener('toChat', (event) => {
-                menu.addItem(event.detail);
+                this.menu.addItem(event.detail);
+                this.uploadData();
             });
 
-            // Новое меню по шаблону
-            let tmpl = _.template(document.getElementById('list-template').innerHTML);
+            this.loadData();
+        }
 
-            // ..результат
-            let result = tmpl({count: 6});
-            let elm = document.createElement('div');
-            elm.innerHTML = result;
-            elm = elm.firstElementChild;
-            document.body.querySelector('.js-app2').append(elm);
+        /**
+         * Load data from server
+         */
+        loadData() {
+            const url = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
+            const xhr = new XMLHttpRequest();
+
+            xhr.addEventListener('readystatechange', (event) => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status !== 200) {
+                        console.error('Сетевая ошибка', xhr);
+                    } else {
+                        const resp = xhr.responseText;
+                        this.menu.setData(JSON.parse(resp));
+                    }
+                }
+            });
+
+            xhr.open('GET', url, true);
+            xhr.send();
+        }
+
+        /**
+         * Upload data to the server
+         */
+        uploadData() {
+            const url = 'https://duna2chat.firebaseio.com/menu/menu1808.json';
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('PUT', url, true);
+
+            xhr.onload = (event) => {
+                console.log('DONE!');
+            };
+
+            xhr.send(JSON.stringify(this.menu.data));
         }
     }
 

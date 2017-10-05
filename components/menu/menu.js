@@ -2,7 +2,7 @@
     'use strict';
 
     const template = window.menuTemplate;
-    const templateItem = window.menuItemTemplate;
+    const templateItem = window.menuitemTemplate;
 
     // const tmpl = window.menuTmpl;
 
@@ -46,15 +46,19 @@
         }
 
         /**
+         * Обновление состояния меню
+         * @param {Object} data 
+         */
+        setData(data) {
+            this.data = data;
+            this.render();
+        }
+
+        /**
          * Добавляем элемент меню
          * @param {Object} item
          */
         addItem(item) {
-            // let el = document.createElement('div');
-            // el.innerHTML = this.getItemHtml(item, this.data.items.length);
-            // el = el.firstElementChild;
-            // this.list.append(el);
-
             this.data.items.push(item);
             this.render();
         }
@@ -77,12 +81,6 @@
          */
         getItemHtml(item, index) {
             return templateItem({item, index});
-            `
-            <li class="menu__item" data-index="${index}">
-                <span class="menu__day" data-action="pick">${item.day}&nbsp;-&nbsp;</span>
-                <a class="menu__link" href="${item.href}" data-action="pick">${item.anchor}</a>
-                <button class="close menu__remove-button" data-action="remove">[X]</button>
-            </li>`;
         }
 
         /**
@@ -90,35 +88,6 @@
          */
         render() {
             this.el.innerHTML = template(this.data);
-        }
-
-        /**
-         * Создаем HTML
-         */
-        _render() {
-            /**
-             * Создаем HTML элементов меню
-             * @param {Array<Item>} itmes
-             * @return {string}
-             */
-            let generateItems = (itmes) => {
-                return itmes.map(this.getItemHtml.bind(this)).join('');
-            };
-
-            // this.el.innerHTML = tmpl(this.data);
-
-            this.el.innerHTML = `
-                <div class="menu">
-                    <span class="menu__title">
-                        <h3>${this.data.title}</h3>
-                    </span>
-                    <ul class="menu__list">
-                        ${generateItems(this.data.items)}
-                    </ul>
-                </div>`;
-
-            this.list = this.el.querySelector('.menu__list');
-            this.title = this.el.querySelector('.menu__title');
         }
 
         /**
@@ -157,14 +126,14 @@
 
             switch (item.dataset.action) {
             case 'remove':
-            this._onPickClick(item);
-            this._onRemoveClick(item);
-            break;
+                this._onPickClick(item);
+                this._onRemoveClick(item);
+                break;
 
             case 'pick':
-            this._onPickClick(item);
-            if (item.href) window.open(item.href);
-            break;
+                this._onPickClick(item);
+                if (item.href) window.open(item.href);
+                break;
             }
         }
     }

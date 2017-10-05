@@ -9,7 +9,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "pug": "pug components/{**/**,**}/*.pug --no-debug --client --name-after-file --extension=pug.js",
         "pug1": "pug components/menu/menuItem.pug --no-debug --client --name-after-file --extension=pug.js",
-        "pug2": "pug components/menu/menu.pug --no-debug --client --name-after-file --extension=pug.js"
+        "pug2": "pug components/menu/menu.pug --no-debug --client --name-after-file --extension=pug.js",
+        "pug3": "pug components --no-debug --client --name-after-file --extension=pug.js"
     },
     "repository": {
         "type": "git",

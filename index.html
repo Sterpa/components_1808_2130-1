@@ -2,25 +2,13 @@
 <html>
     <head>
         <title>Список дел</title>
-        <!--
         <meta charset="utf-8" />
-        -->
-        <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
-        <script src="https://pugjs.org/js/pug.js"></script>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet" href="components/app/app.css">
         <link rel="stylesheet" href="components/form/form.css">
         <link rel="stylesheet" href="components/menu/menu.css">
         
-        <!-- шаблон для списка от 1 до count -->
-        <script type="text/template" id="list-template">
-            <ul>
-            <% for (let i=1; i<=count; i++) { %>
-            <li><%=i%></li>
-            <% } %>
-            </ul>
-        </script>
     </head>
     <body>
         <div class="baseLayer">
@@ -29,10 +17,6 @@
                     <div class="js-form"></div>
                     <div class="js-menu"></div>
                 </div>
-                <div class="js-app2">
-                    <div class="js-form2"></div>
-                    <div class="js-menu2"></div>
-                </div>                
             </div>
         </div>
 
@@ -47,27 +31,6 @@
         <script>
             "use strict";
             new window.App({el: document.querySelector('.js-app')});
-        </script>
-        
-        <script src="http://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-        <script>
-            // Новое меню по шаблону PUG
-            // Compile the source code
-            //var fs = require('fs');
-            const pug = require('pug');
-            function foo() {
-                let a = 1;
-            }
-            console.log(foo);
-            // Compile the source code
-            foo = pug.compileClient('p #{fam}s Pug source code!');
-            console.log(foo);
-            // Render a set of data
-            let resultPug = foo({
-                fam: 'Timothy'
-            });
-
-            document.body.querySelector('.js-menu2').innerHTML = resultPug;
         </script>
 
     </body>
