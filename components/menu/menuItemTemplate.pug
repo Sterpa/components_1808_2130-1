@@ -1,0 +1,11 @@
+li.menu__item(data-index=index)
+    span.menu__day(
+        data-action='pick'
+    )= item.day
+    a.menu-link(
+        href=item.href'&nbsp;-&nbsp'
+        data-action='pick'
+    )= item.anchor
+    button.close.menu__remove-button(
+        data-action='remove'
+    )= '[X]'

@@ -80,15 +80,15 @@
 
             // this.el.innerHTML = tmpl(this.data);
 
-            this.el.innerHTML = `<div class="menu">
-                <span class="menu__title">
-                    <h3>${this.data.title}</h3>
-                </span>
-                <ul class="menu__list">
-                    ${generateItems(this.data.items)}
-                </ul>
-            </div>
-            `;
+            this.el.innerHTML = `
+                <div class="menu">
+                    <span class="menu__title">
+                        <h3>${this.data.title}</h3>
+                    </span>
+                    <ul class="menu__list">
+                        ${generateItems(this.data.items)}
+                    </ul>
+                </div>`;
 
             this.list = this.el.querySelector('.menu__list');
             this.title = this.el.querySelector('.menu__title');
