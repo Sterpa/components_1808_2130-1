@@ -1,40 +1,63 @@
-.form__form fieldset{
-    text-align: left;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: black;
-    vertical-align: center;
+.js-form {
+    width: 96%;
+    margin: auto;
+    margin-top: 60px;
 }
 
-.form__input-url {
-    width: 43%;
-    height: 24px;
-    font: caption;
-    border-width: 1px;
-    border-radius: 4px;
-    border-color: black;
-    margin-top: 4px;
+
+.form__form fieldset{
+    text-align: left;
+    border-width: 0px;
     vertical-align: center;
 }
 
 .form__input-date {
-    width: 43%;
-    height: 26px;
+    width: 12%;
+    height: 36px;
     font: caption;
     border-width: 1px;
     border-radius: 4px;
     border-color: black;
-    margin-top: 4px;
+    margin-top: 9px;
     vertical-align: center;
 }
 
-.form__btn {
-    float: right;
-    width: 10%;
-    height: 28px;
+.form__input-text {
+    width: 50%;
+    height: 34px;
+    font: caption;
     border-width: 1px;
     border-radius: 4px;
     border-color: black;
-    margin-top: 4px;
+    margin-top: 9px;
     vertical-align: center;
+}
+
+.form__input-url {
+    width: 20%;
+    height: 34px;
+    font: caption;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: black;
+    margin-top: 9px;
+    vertical-align: center;
+}
+
+.form__button {
+    background-image: url(../img/button_04.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    float: right;
+    width: 200px;
+    height: 50px;
+    border-width: 0px;
+    margin-top: 4px;
+    margin-right: -16px;
+    vertical-align: center;
+}
+
+.form__button:active {
+    background-image: url(../img/button_04_pressed.png);
 }

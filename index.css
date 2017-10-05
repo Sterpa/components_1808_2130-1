@@ -1,5 +1,7 @@
 body {
     font: 100% arial;
+    background-color: black;
+    color: white;
 }
 
  .baseLayer {
@@ -7,6 +9,6 @@ body {
  }
 
  .centerLayer {
-    width: 600px;
+    width: 1280px;
     margin: auto;
  }

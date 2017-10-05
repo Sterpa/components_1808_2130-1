@@ -20,24 +20,24 @@
                     title: 'Список дел на сегодня',
                     items: [
                         {
-                            href: 'https://vk.com',
-                            anchor: '6 утра - Подъем'
+                            day: '',
+                            anchor: '6 утра - Подъем',
+                            href: 'https://vk.com'
                         },
                         {
-                            href: 'https://ok.ru',
-                            anchor: '7 утра - Разгон облаков...'
+                            day: '',
+                            anchor: '7 утра - Разгон облаков... Установление хорошей погоды',
+                            href: 'https://ok.ru'
                         },
                         {
-                            href: 'https://yahoo.com',
-                            anchor: '...30 мин - Установление хорошей погоды'
+                            day: '',
+                            anchor: 'с 8 до 10 - Подвиг',
+                            href: 'https://yahoo.com'
                         },
                         {
-                            href: 'https://yandex.ru',
-                            anchor: 'с 8 до 10 - Подвиг'
-                        },
-                        {
-                            href: 'https://yandex.ru',
-                            anchor: 'в 16:00 - война с Англией'
+                            day: '',
+                            anchor: 'в 16:00 - война с Англией',
+                            href: 'https://yandex.ru'
                         }
                     ]
                 },

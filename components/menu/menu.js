@@ -59,9 +59,8 @@
         getItemHtml(item, index) {
             return `
             <li class="menu__item" data-index="${index}">
-                <a class="menu__link" href="${item.href}" data-action="pick">
-                    ${item.anchor}
-                </a>
+                <span class="menu__day" data-action="pick">${item.day}&nbsp;-&nbsp;</span>
+                <a class="menu__link" href="${item.href}" data-action="pick">${item.anchor}</a>
                 <button class="close menu__remove-button" data-action="remove">[X]</button>
             </li>`;
         }

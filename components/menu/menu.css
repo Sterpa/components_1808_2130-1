@@ -1,3 +1,8 @@
+.js-menu {
+  width: 74%;
+  margin-top: 30px;
+}
+
 .menu__title {
   text-align: center;
 }
@@ -6,7 +11,7 @@
   text-align: right;
 }
 
-.menu__link {
+.menu__link, .menu__day {
   float: left;
 }
 

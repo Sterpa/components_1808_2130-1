@@ -24,22 +24,24 @@
             this.el.innerHTML = `
             <form class="form__form">
                 <fieldset>
-                <input class="form__input-date"
-                    type="date"
-                    name="anchor"
-                    required="required"
-                    placeholder="date"
-                    value="${this._getDateInFormat()}"/>
+                    <input class="form__input-date"
+                        type="date"
+                        name="day"
+                        required="required"
+                        value="${this._getDateInFormat()}"/>
+                        
+                    <input class="form__input-text"
+                        type="text"
+                        name="anchor"
+                        required="required"
+                        placeholder="время - дело"/>
 
-                <input class="form__input-url"
+                    <input class="form__input-url"
                         type="url"
                         name="href"
-                        required="required"
-                        placeholder="дело"/>
+                        placeholder="https://music.yandex.ru/oldschool/"/>
 
-                    <button class="form__btn" type="submit">
-                        Send
-                    </button>
+                    <button class="form__button" type="submit"></button>
                 </fieldset>
             </form>`;
         }
@@ -58,8 +60,9 @@
         _myTrigger(event) {
             event.preventDefault(); // Отмена действия браeзера 'submit' по-умолчанию для формы
             let eventData = {
-                href: this.el.querySelector('input[name="href"]').value,
-                anchor: this.el.querySelector('input[name="anchor"]').value
+                day: this.el.querySelector('input[name="day"]').value,
+                anchor: this.el.querySelector('input[name="anchor"]').value,
+                href: this.el.querySelector('input[name="href"]').value
             };
             this.trigger('toChat', eventData);
             event.target.reset();
