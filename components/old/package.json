@@ -1,0 +1,30 @@
+{
+    "name": "components_1808_2130",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "lint": "./node_modules/.bin/eslint components/**/*.js",
+        "serve": "./node_modules/.bin/static-server .",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "mypug": "pug components/{**/**,**}/*.pug --no-debug --client --name-after-file --extension=pug.js",
+        "mpug": "pug components/*.pug --no-debug --client --name-after-file --extension=pug.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/iketari/components_1808_2130.git"
+    },
+    "author": "Artsiom Mezin",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/iketari/components_1808_2130/issues"
+    },
+    "homepage": "https://github.com/iketari/components_1808_2130#readme",
+    "devDependencies": {
+        "eslint": "^4.1.1",
+        "eslint-config-google": "^0.9.1",
+        "pug": "^2.0.0-rc.4",
+        "pug-cli": "^1.0.0-alpha6",
+        "static-server": "^2.0.5"
+    }
+}

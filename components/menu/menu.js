@@ -1,6 +1,9 @@
 (function() {
     'use strict';
 
+    const template = window.menuTemplate;
+    const templateItem = window.menuItemTemplate;
+
     // const tmpl = window.menuTmpl;
 
     /**
@@ -24,6 +27,22 @@
 
             this.render();
             this._initEvents();
+        }
+
+        /**
+         * Возвращает HTML элемент списка меню
+         * @return {HTMLUListElement}
+         */
+        get list() {
+            return this.el.querySelector('.menu__list');
+        }
+
+        /**
+         * Возвращает HTML элемент заголовка меню
+         * @return {HTMLUListElement}
+         */
+        get title() {
+            return this.el.querySelector('.menu__title');
         }
 
         /**
@@ -57,7 +76,8 @@
          * @return {string}
          */
         getItemHtml(item, index) {
-            return `
+            return templateItem({item, index});
+            `
             <li class="menu__item" data-index="${index}">
                 <span class="menu__day" data-action="pick">${item.day}&nbsp;-&nbsp;</span>
                 <a class="menu__link" href="${item.href}" data-action="pick">${item.anchor}</a>
@@ -69,6 +89,13 @@
          * Создаем HTML
          */
         render() {
+            this.el.innerHTML = template(this.data);
+        }
+
+        /**
+         * Создаем HTML
+         */
+        _render() {
             /**
              * Создаем HTML элементов меню
              * @param {Array<Item>} itmes
