@@ -11,4 +11,13 @@ body {
  .centerLayer {
     width: 1024px;
     margin: auto;
+    position: relative;
+ }
+
+ .map__img {
+    width: 20%;
+    position: absolute;
+    bottom: 20%;
+    right: 0px;
+    background-color: transparent;
  }

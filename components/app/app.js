@@ -20,9 +20,9 @@
                     title: 'Список дел в этой вселенной',
                     items: [
                         {
-                            day: '1957-10-04',
-                            anchor: '6 утра - Подъем',
-                            href: 'https://vk.com'
+                            day: new Date(),
+                            anchor: 'Loading...',
+                            href: 'https://duna2chat.firebaseio.com/menu/menu1808.json'
                         }
                     ]
                 },

@@ -41,7 +41,7 @@
                         name="href"
                         placeholder="https://music.yandex.ru/oldschool/"/>
 
-                    <button class="form__button" type="submit"></button>
+                    <button class="form__button" type="submit">&#160</button>
                 </fieldset>
             </form>`;
         }
